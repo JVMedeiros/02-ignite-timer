@@ -1,5 +1,9 @@
 import { ButtonContainer } from "../components/Button.styles";
 
 export function History() {
-  return <ButtonContainer variant="secondary">Home</ButtonContainer>
+  return(
+    <div>
+      <h1>History</h1>
+    </div>
+  )
 }
