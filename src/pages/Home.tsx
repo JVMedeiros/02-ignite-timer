@@ -1,5 +1,9 @@
 import { ButtonContainer } from "../components/Button.styles";
 
 export function Home() {
-  return <ButtonContainer variant="primary">Home</ButtonContainer>
+  return (
+    <div>
+      <h1>Home</h1>
+    </div>
+  )
 }
