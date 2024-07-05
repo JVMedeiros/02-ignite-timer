@@ -20,7 +20,6 @@ interface Cycle {
   startDate: Date;
   interruptedDate?: Date
   finishedDate?: Date
-
 }
 
 export function Home() {
