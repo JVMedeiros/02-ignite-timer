@@ -18,6 +18,7 @@ interface Cycle {
   task: string;
   minutesAmount: number;
   startDate: Date;
+  interruptedDate?: Date
 }
 
 export function Home() {
@@ -63,6 +64,17 @@ export function Home() {
     setAmountSecondsPassed(0)
 
     reset()
+  }
+
+  function handleInterruptCycle() {
+    setActiveCycleId(null)
+    setCycles(cycles.map(cycle => {
+      if (cycle.id === activeCycleId) {
+        return { ...cycle, interruptedDate: new Date()}
+      } else {
+        return cycle
+      }
+    }))
   }
 
 
@@ -130,7 +142,7 @@ export function Home() {
 
         {
           activeCycle ? (
-            <StopCountdownButton disabled={!isSubmitDisabled} type="button">
+            <StopCountdownButton onClick={handleInterruptCycle} type="button">
               <HandPalm size={24} />
               Interromper
             </StopCountdownButton>
