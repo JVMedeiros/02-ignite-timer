@@ -75,7 +75,7 @@ export function Home() {
 
   useEffect(()=> {
     if (activeCycle) {
-      document.title = `${minutes}:${seconds}`
+      document.title = `Ignite Timer - ${minutes}:${seconds}`
     }
   }, [minutes, seconds, activeCycle])
 
