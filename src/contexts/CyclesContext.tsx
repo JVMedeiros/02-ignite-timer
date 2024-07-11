@@ -66,8 +66,6 @@ export function CyclesContextProvider({children}: CyclesContextProviderProps) {
     setCycles((state) => [...state, newCycle]);
     setActiveCycleId(id)
     setAmountSecondsPassed(0)
-
-    // reset()
   }
 
   function interruptCurrentCycle() {
@@ -83,7 +81,19 @@ export function CyclesContextProvider({children}: CyclesContextProviderProps) {
   }
 
   return (
-    <CyclesContext.Provider value={{cycles, activeCycle, activeCycleId, markCurrentCycleAsFinished, amountSecondsPassed, setSecondsPassed, createNewCycle, interruptCurrentCycle}}>
+    <CyclesContext.Provider value={
+      {
+        cycles, 
+        activeCycle, 
+        activeCycleId, 
+        markCurrentCycleAsFinished, 
+        amountSecondsPassed, 
+        setSecondsPassed, 
+        createNewCycle, 
+        interruptCurrentCycle
+      }
+      }
+    >
       {children}
     </CyclesContext.Provider>
   )
